@@ -1,0 +1,13 @@
+.idea/*
+.static_root/*
+venv/*
+Lib/*
+Scripts/*
+# temporary files
+*.log
+*.pot
+*.pyc
+pip-selfcheck.json
+pyvenv.cfg
+__pycache__/
+db.sqlite3

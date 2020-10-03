@@ -1,0 +1,70 @@
+from django.db import models
+
+
+class CustInfoModel(models.Model):
+    YN_CODE = (
+        ('N', 'No'),
+        ('Y', 'Yes')
+    )
+
+    code = models.CharField(primary_key=True, max_length=6)
+    buysale = models.CharField(max_length=20, blank=True, null=True)
+    code2 = models.CharField(max_length=20, blank=True, null=True)
+    compname = models.CharField(max_length=70, blank=True, null=True)
+    compalias = models.CharField(max_length=70, blank=True, null=True)
+    ceoname = models.CharField(max_length=20, blank=True, null=True)
+    compsn = models.CharField(max_length=15, blank=True, null=True)
+    subcompsn = models.CharField(max_length=15, blank=True, null=True)
+    telno1 = models.CharField(max_length=20, blank=True, null=True)
+    telno2 = models.CharField(max_length=20, blank=True, null=True)
+    telno3 = models.CharField(max_length=20, blank=True, null=True)
+    telno4 = models.CharField(max_length=20, blank=True, null=True)
+    fax = models.CharField(max_length=20, blank=True, null=True)
+    hpno = models.CharField(max_length=20, blank=True, null=True)
+    status = models.CharField(max_length=40, blank=True, null=True)
+    item = models.CharField(max_length=40, blank=True, null=True)
+    bigo = models.CharField(max_length=50, blank=True, null=True)
+    note = models.TextField(blank=True, null=True)
+    etaxcharge = models.CharField(max_length=30, blank=True, null=True)
+    etaxhp = models.CharField(max_length=20, blank=True, null=True)
+    etaxemail = models.CharField(max_length=100, blank=True, null=True)
+    ceoname2 = models.CharField(max_length=20, blank=True, null=True)
+    email = models.CharField(max_length=40, blank=True, null=True)
+    customerpersonname = models.CharField(max_length=50, blank=True, null=True)
+    customerpersontel = models.CharField(max_length=20, blank=True, null=True)
+    customerpersonhp = models.CharField(max_length=20, blank=True, null=True)
+    paymentpersonname = models.CharField(max_length=50, blank=True, null=True)
+    paymentpersontel = models.CharField(max_length=20, blank=True, null=True)
+    paymentpersonhp = models.CharField(max_length=20, blank=True, null=True)
+    upperaddrname = models.CharField(max_length=200, blank=True, null=True)
+    middleaddrname = models.CharField(max_length=200, blank=True, null=True)
+    roadname = models.CharField(max_length=200, blank=True, null=True)
+    lat = models.DecimalField(max_digits=12, decimal_places=8, blank=True, null=True)
+    lon = models.DecimalField(max_digits=12, decimal_places=8, blank=True, null=True)
+    distance = models.FloatField(blank=True, null=True)
+    zonecode = models.CharField(max_length=10, blank=True, null=True)
+    address = models.CharField(max_length=100, blank=True, null=True)
+    addressdetail = models.CharField(max_length=100, blank=True, null=True)
+    divlat = models.DecimalField(max_digits=12, decimal_places=8, blank=True, null=True)
+    divlon = models.DecimalField(max_digits=12, decimal_places=8, blank=True, null=True)
+    divdistance = models.FloatField(blank=True, null=True)
+    divzonecode = models.CharField(max_length=10, blank=True, null=True)
+    divaddress = models.CharField(max_length=100, blank=True, null=True)
+    divaddressdetail = models.CharField(max_length=100, blank=True, null=True)
+    dong = models.CharField(max_length=20, blank=True, null=True)
+    endsalerdt = models.CharField(max_length=8, blank=True, null=True)
+    startdt = models.CharField(max_length=8, blank=True, null=True)
+    vat = models.CharField(max_length=5, blank=True, null=True)
+    vatyn = models.CharField(max_length=1, blank=True, null=True)
+    delyn = models.CharField(max_length=1, blank=True, null=True, choices=YN_CODE)
+    regid = models.CharField(max_length=20, blank=True, null=True)
+    regdt = models.DateTimeField(auto_now_add=True, verbose_name='등록일자')
+    modid = models.CharField(max_length=20, blank=True, null=True)
+    moddt = models.DateTimeField(auto_now=True, verbose_name='수정일자')
+
+    class Meta:
+        managed = False
+        ordering = ('code',)
+        db_table = 'cust'
+        verbose_name = "거래처관리"
+        verbose_name_plural = "거래처관리"
